@@ -10,8 +10,8 @@ def get_auth_link(app_id=default_id, scope="friends"):
             f"&response_type=token&v={api_v}")
     return link
 
-# A factory(?) of sorts to create method caller. Initialized with method name, 
-# authorization token and parameter names. 
+# Class used to create a specific method caller. 
+# Initialized with method name, authorization token and parameter names. 
 #
 # Use call() to call (duh) the method. Input parameter values in the
 # order corresponding to parameter names supplied during initialization.

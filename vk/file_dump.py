@@ -44,6 +44,16 @@ def json_formatter(data, omit_outer_key=False, **dump_kwargs):
 
     return json.dumps(true_result, **dump_kwargs)
 
+def get_formatter_by_ext(ext):
+    if ext == "CSV":
+        return csv_formatter
+    elif ext == "TSV":
+        return tsv_formatter
+    elif ext == "JSON":
+        return json_formatter
+    else:
+        raise Exception("Invalid format specified")
+
 def dump_friends(data, filename="report", 
                  formatter=csv_formatter, **formatter_kwargs):
     text = formatter(data, **formatter_kwargs)
